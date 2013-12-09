@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>CodeMatch Step 6</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+
+<body>
+<h1>6. クリックしたボタンの色を変えます</h1>
+
+<div class="wrapper">
+	<ul class="buttons">
+		<li><a href="#">1</a></li>
+		<li><a href="#">2</a></li>
+		<li><a href="#">3</a></li>
+	</ul>
+	
+	<ul class="gallery">
+		<li><img src="assets/mv01.jpg" alt="" /></li>
+		<li><img src="assets/mv02.jpg" alt="" /></li>
+		<li><img src="assets/mv03.jpg" alt="" /></li>
+	</ul>
+</div>
+
+<h2>ポイント</h2>
+<ul>
+	<li>クリックされたボタンの色を変えましょう。CSS で、.buttons a.active に別の背景色が設定されています。</li>
+	<li>要素へのクラスの追加は <a href="http://api.jquery.com/addclass/" target="_blank">addClass()</a> を使います。</li>
+	<li>要素からクラスを取り除くには <a href="http://api.jquery.com/removeclass/" target="_blank">removeClass()</a> を使います。</li>
+</ul>
+
+<script type="text/javascript" src="assets/jquery-1.10.2.min.js"></script>
+<script>
+$(function() {
+	$('.buttons a')
+		.click(function() {
+			var i;
+			i = $('.buttons a').index(this);
+			$('.gallery > li:eq(' + i + ')').stop(true, true).fadeIn(600);
+			$('.gallery > li:not(:eq(' + i + '))').stop(true, false).fadeOut(600);
+			
+			$('.buttons a.active').removeClass('active');
+			$(this).addClass('active');
+			
+			return false; // preventDefault() を使う方がベター
+		})
+		.hover(function() {
+			$(this).stop().fadeTo(200, 0.5);
+		}, function() {
+			$(this).stop().fadeTo(200, 1);
+		});
+});
+</script>
+</body>
+</html>

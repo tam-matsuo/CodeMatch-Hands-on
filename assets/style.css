@@ -1,0 +1,47 @@
+h1 { font-size: 20px; }
+h2 { font-size: 16px; }
+
+.wrapper {
+	margin: 40px;
+}
+
+.buttons {
+	padding: 0;
+}
+.buttons li {
+	list-style: none;
+	display: inline-block;
+}
+.buttons a {
+	color: #fff;
+	background-color: #38a;
+	padding: 6px 12px;
+	font-weight: bold;
+	border-radius: 4px;
+	text-decoration: none;
+}
+.buttons a.active {
+	background-color: #a38;
+}
+
+.gallery {
+	position: relative;
+	width: 475px;
+	height: 175px;
+	padding: 10px;
+	overflow: hidden;
+	border: 1px solid #888;
+}
+.gallery li {
+	display: none;
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 475px;
+	height: 175px;
+	padding: 10px;
+	list-style: none;
+}
+.gallery img {
+	width: 100%;
+}

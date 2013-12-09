@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>CodeMatch Step 3</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+
+<body>
+<h1>3. ボタンと画像の数を3つに増やします</h1>
+
+<div class="wrapper">
+	<ul class="buttons">
+		<li><a href="#">1</a></li>
+		<li><a href="#">2</a></li>
+		<li><a href="#">3</a></li>
+	</ul>
+	
+	<ul class="gallery">
+		<li><img src="assets/mv01.jpg" alt="" /></li>
+		<li><img src="assets/mv02.jpg" alt="" /></li>
+		<li><img src="assets/mv03.jpg" alt="" /></li>
+	</ul>
+</div>
+
+<h2>ポイント</h2>
+<ul>
+	<li>hover で透明度を変える処理は、コードを変更せずとも動作OKです。<br />
+	hover 内で $(this) を使わず $('.buttons a') としていた場合は、動きません。</li>
+	<li>画像のフェードインは…… 3つが同時にフェードインしてきます。</li>
+</ul>
+
+<script type="text/javascript" src="assets/jquery-1.10.2.min.js"></script>
+<script>
+$(function() {
+	$('.buttons a')
+		.click(function() {
+			$('.gallery > li').fadeIn(600);
+			return false; // preventDefault() を使う方がベター
+		})
+		.hover(function() {
+			$(this).stop().fadeTo(200, 0.5);
+		}, function() {
+			$(this).stop().fadeTo(200, 1);
+		});
+});
+</script>
+</body>
+</html>

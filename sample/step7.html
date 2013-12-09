@@ -1,0 +1,75 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>CodeMatch Step 7</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+
+<body>
+<h1>7. 独自のアニメーション</h1>
+
+<div class="wrapper">
+	<ul class="buttons">
+		<li><a href="#">1</a></li>
+		<li><a href="#">2</a></li>
+		<li><a href="#">3</a></li>
+	</ul>
+	
+	<ul class="gallery">
+		<li><img src="assets/mv01.jpg" alt="" /></li>
+		<li><img src="assets/mv02.jpg" alt="" /></li>
+		<li><img src="assets/mv03.jpg" alt="" /></li>
+	</ul>
+</div>
+
+<h2>ポイント</h2>
+<ul>
+	<li><a href="http://api.jquery.com/css/" target="_blank">css()</a> で、自由に CSS を書き換えることができます。</li>
+	<li><a href="http://api.jquery.com/animate/" taget="_blank">animate()</a> で、指定された秒数をかけて徐々に CSS の値を変化させていくことができます。</li>
+</ul>
+
+<script type="text/javascript" src="assets/jquery-1.10.2.min.js"></script>
+<script>
+$(function() {
+	$('.buttons a')
+		.click(function() {
+			var i;
+			i = $('.buttons a').index(this);
+			$('.gallery > li:visible')
+				.stop(true, false)
+				.css('z-index', 1)
+				.animate({
+					left: '-70%',
+					opacity: 0.3
+				}, {
+					duration: 600,
+					complete: function() {$(this).hide()}
+				});
+			$('.gallery > li:eq(' + i + ')')
+				.stop(true, false)
+				.css({
+					display: 'block',
+					left: '100%',
+					opacity: 0.7,
+					'z-index': 2
+				})
+				.animate({
+					left: 0,
+					opacity: 1
+				}, 600);
+			
+			$('.buttons a.active').removeClass('active');
+			$(this).addClass('active');
+			
+			return false; // preventDefault() を使う方がベター
+		})
+		.hover(function() {
+			$(this).stop().fadeTo(200, 0.5);
+		}, function() {
+			$(this).stop().fadeTo(200, 1);
+		});
+});
+</script>
+</body>
+</html>
