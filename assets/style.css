@@ -1,5 +1,6 @@
 h1 { font-size: 20px; }
 h2 { font-size: 16px; }
+h3 { font-size: 14px; }
 
 .wrapper {
 	margin: 40px;
@@ -44,4 +45,13 @@ h2 { font-size: 16px; }
 }
 .gallery img {
 	width: 100%;
+}
+
+.step {
+    width: 90%;
+    height: 300px;
+}
+
+nav {
+    text-align: right;
 }

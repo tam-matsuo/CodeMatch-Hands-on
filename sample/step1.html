@@ -2,39 +2,46 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>CodeMatch Step 1</title>
-<link rel="stylesheet" href="assets/style.css">
+<title>Step 1</title>
+<link rel="stylesheet" href="../assets/style.css">
 </head>
 
 <body>
-<h1>1. マウスをクリックしたら、現在非表示になっている画像をフェードインさせる</h1>
+<h2>Step 1. マウスをクリックしたら、現在非表示になっている画像をフェードインさせる</h2>
 
-<div class="wrapper">
-	<ul class="buttons">
-		<li><a href="#">1</a></li>
-	</ul>
-	
-	<ul class="gallery">
-		<li><img src="assets/mv01.jpg" alt="" /></li>
-	</ul>
-</div>
-
-<h2>ポイント</h2>
+<h3>ポイント</h3>
 <ul>
 	<li>クリックの検出には <a href="http://api.jquery.com/click/" target="_blank">click(function(){})</a> を使います</li>
-	<li>画像を入れた要素 ".gallery > li" が css で非表示になっています。</li>
+	<li>現状、画像を入れた要素 ".gallery > li" が css で非表示になっています。</li>
 	<li>要素をフェードインさせるには <a href="http://api.jquery.com/fadein" target="_blank">fadeIn(duration)</a> を使います。duration の単位はミリ秒(1秒なら1000) です。</li>
 	<li>クリック処理をキャンセルするためには、function(){} の中で return false; を使います</li>
 </ul>
 
+<nav>
+    ＜ Step
+    <a href="step1.html">1</a>
+    <a href="step2.html">2</a>
+    <a href="step3.html">3</a>
+    <a href="step4.html">4</a>
+    <a href="step5.html">5</a>
+    <a href="step6.html">6</a>
+    <a href="step7.html">7</a>
+    ＞
+</nav>
+
+<!--
 <script type="text/javascript" src="assets/jquery-1.10.2.min.js"></script>
 <script>
 $(function() {
 	$('.buttons a').click(function() {
+		// 画像をフェードイン
 		$('.gallery > li').fadeIn(600);
-		return false; // preventDefault() を使う方がベター
+
+        // <a href=""> のURLに移動させない (preventDefault() を使う方がベター)
+        return false; // preventDefault() を使う方がベター
 	});
 });
 </script>
+-->
 </body>
 </html>

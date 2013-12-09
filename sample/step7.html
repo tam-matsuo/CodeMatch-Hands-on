@@ -2,40 +2,42 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>CodeMatch Step 7</title>
-<link rel="stylesheet" href="assets/style.css">
+<title>Step 7</title>
+<link rel="stylesheet" href="../assets/style.css">
 </head>
 
 <body>
-<h1>7. 独自のアニメーション</h1>
+<h2>Step 7. 独自のアニメーション</h2>
 
-<div class="wrapper">
-	<ul class="buttons">
-		<li><a href="#">1</a></li>
-		<li><a href="#">2</a></li>
-		<li><a href="#">3</a></li>
-	</ul>
-	
-	<ul class="gallery">
-		<li><img src="assets/mv01.jpg" alt="" /></li>
-		<li><img src="assets/mv02.jpg" alt="" /></li>
-		<li><img src="assets/mv03.jpg" alt="" /></li>
-	</ul>
-</div>
-
-<h2>ポイント</h2>
+<h3>ポイント</h3>
 <ul>
 	<li><a href="http://api.jquery.com/css/" target="_blank">css()</a> で、自由に CSS を書き換えることができます。</li>
 	<li><a href="http://api.jquery.com/animate/" taget="_blank">animate()</a> で、指定された秒数をかけて徐々に CSS の値を変化させていくことができます。</li>
 </ul>
 
+<nav>
+    ＜ Step
+    <a href="step1.html">1</a>
+    <a href="step2.html">2</a>
+    <a href="step3.html">3</a>
+    <a href="step4.html">4</a>
+    <a href="step5.html">5</a>
+    <a href="step6.html">6</a>
+    <a href="step7.html">7</a>
+    ＞
+</nav>
+
+<!--
 <script type="text/javascript" src="assets/jquery-1.10.2.min.js"></script>
 <script>
 $(function() {
 	$('.buttons a')
 		.click(function() {
+		    // 何番目のボタンが押されたのか？を求める
 			var i;
 			i = $('.buttons a').index(this);
+
+            // 表示されている画像を、消していくアニメーションの例
 			$('.gallery > li:visible')
 				.stop(true, false)
 				.css('z-index', 1)
@@ -46,6 +48,8 @@ $(function() {
 					duration: 600,
 					complete: function() {$(this).hide()}
 				});
+
+            // 出現させるアニメーションの例
 			$('.gallery > li:eq(' + i + ')')
 				.stop(true, false)
 				.css({
@@ -58,18 +62,23 @@ $(function() {
 					left: 0,
 					opacity: 1
 				}, 600);
-			
+
+            // アクティブなボタンにはクラス .active をつける
 			$('.buttons a.active').removeClass('active');
 			$(this).addClass('active');
 			
-			return false; // preventDefault() を使う方がベター
+			// <a href=""> のURLに移動させない (preventDefault() を使う方がベター)
+			return false;
 		})
 		.hover(function() {
+		    // マウスが乗った時の処理
 			$(this).stop().fadeTo(200, 0.5);
 		}, function() {
+		    // マウスが外れた時の処理
 			$(this).stop().fadeTo(200, 1);
 		});
 });
 </script>
+-->
 </body>
 </html>

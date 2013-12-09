@@ -2,45 +2,54 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>CodeMatch Step 2</title>
-<link rel="stylesheet" href="assets/style.css">
+<title>Step 2</title>
+<link rel="stylesheet" href="../assets/style.css">
 </head>
 
 <body>
-<h1>2. マウスを乗せたら、乗せた要素の透明度を 70% に変えていく</h1>
+<h2>Step 2. マウスを乗せたら、乗せた要素の透明度を 70% に変えていく</h2>
 
-<div class="wrapper">
-	<ul class="buttons">
-		<li><a href="#">1</a></li>
-	</ul>
-	
-	<ul class="gallery">
-		<li><img src="assets/mv01.jpg" alt="" /></li>
-	</ul>
-</div>
-
-<h2>ポイント</h2>
+<h3>ポイント</h3>
 <ul>
 	<li>マウスを乗せた・外した、の検出には <a href="http://api.jquery.com/hover/" target="_blank">hover(function(){}, function(){})</a> を使います</li>
 	<li>ひとつめの function がマウスを乗せた時の処理、ふたつめの function がマウスを外した時の処理です</li>
-	<li>要素の透明度を徐々に変えるには <a href="http://api.jquery.com/fadeto" target="_blank">fadeto(duration, opacity)</a> を使います。duration の単位はミリ秒、opacity は 0〜1です。</li>
+	<li>要素の透明度を徐々に変えるには <a href="http://api.jquery.com/fadeto" target="_blank">fadeTo(duration, opacity)</a> を使います。duration の単位はミリ秒、opacity は 0〜1です。</li>
 	<li>アニメーション処理をキャンセルするためには、<a href="http://api.jquery.com/stop" target="_blank">stop(clearQueue, jumpToEnd)</a> を使います</li>
 </ul>
 
+<nav>
+    ＜ Step
+    <a href="step1.html">1</a>
+    <a href="step2.html">2</a>
+    <a href="step3.html">3</a>
+    <a href="step4.html">4</a>
+    <a href="step5.html">5</a>
+    <a href="step6.html">6</a>
+    <a href="step7.html">7</a>
+    ＞
+</nav>
+
+<!--
 <script type="text/javascript" src="assets/jquery-1.10.2.min.js"></script>
 <script>
 $(function() {
 	$('.buttons a')
 		.click(function() {
+			// 画像をフェードイン
 			$('.gallery > li').fadeIn(600);
+
+			// <a href=""> のURLに移動させない (preventDefault() を使う方がベター)
 			return false; // preventDefault() を使う方がベター
 		})
 		.hover(function() {
+		    // マウスが乗った時の処理
 			$(this).stop().fadeTo(200, 0.5);
 		}, function() {
+		    // マウスが外れた時の処理
 			$(this).stop().fadeTo(200, 1);
 		});
 });
 </script>
+-->
 </body>
 </html>
