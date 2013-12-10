@@ -12,19 +12,19 @@
 <h3>ポイント</h3>
 <ul>
 	<li><a href="http://api.jquery.com/css/" target="_blank">css()</a> で、自由に CSS を書き換えることができます。</li>
-	<li><a href="http://api.jquery.com/animate/" taget="_blank">animate()</a> で、指定された秒数をかけて徐々に CSS の値を変化させていくことができます。</li>
+	<li><a href="http://api.jquery.com/animate/" target="_blank">animate()</a> で、指定された秒数をかけて徐々に CSS の値を変化させていくことができます。</li>
 </ul>
 
 <nav>
-    ＜ Step
-    <a href="step1.html">1</a>
-    <a href="step2.html">2</a>
-    <a href="step3.html">3</a>
-    <a href="step4.html">4</a>
-    <a href="step5.html">5</a>
-    <a href="step6.html">6</a>
-    <a href="step7.html">7</a>
-    ＞
+	＜ Step
+	<a href="step1.html">1</a>
+	<a href="step2.html">2</a>
+	<a href="step3.html">3</a>
+	<a href="step4.html">4</a>
+	<a href="step5.html">5</a>
+	<a href="step6.html">6</a>
+	<a href="step7.html">7</a>
+	＞
 </nav>
 
 <!--
@@ -33,11 +33,11 @@
 $(function() {
 	$('.buttons a')
 		.click(function() {
-		    // 何番目のボタンが押されたのか？を求める
+			// 何番目のボタンが押されたのか？を求める
 			var i;
 			i = $('.buttons a').index(this);
 
-            // 表示されている画像を、消していくアニメーションの例
+			// 表示されている画像を、消していくアニメーションの例
 			$('.gallery > li:visible')
 				.stop(true, false)
 				.css('z-index', 1)
@@ -49,7 +49,7 @@ $(function() {
 					complete: function() {$(this).hide()}
 				});
 
-            // 出現させるアニメーションの例
+			// 出現させるアニメーションの例
 			$('.gallery > li:eq(' + i + ')')
 				.stop(true, false)
 				.css({
@@ -63,18 +63,18 @@ $(function() {
 					opacity: 1
 				}, 600);
 
-            // アクティブなボタンにはクラス .active をつける
+			// アクティブなボタンにはクラス .active をつける
 			$('.buttons a.active').removeClass('active');
 			$(this).addClass('active');
-			
+
 			// <a href=""> のURLに移動させない (preventDefault() を使う方がベター)
 			return false;
 		})
 		.hover(function() {
-		    // マウスが乗った時の処理
+			// マウスが乗った時の処理
 			$(this).stop().fadeTo(200, 0.5);
 		}, function() {
-		    // マウスが外れた時の処理
+			// マウスが外れた時の処理
 			$(this).stop().fadeTo(200, 1);
 		});
 });

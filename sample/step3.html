@@ -11,22 +11,22 @@
 
 <h3>ポイント</h3>
 <ul>
-    <li>HTMLを編集し、 .buttons と .gallery のリストの要素を3つに増やしてください。</li>
+	<li>HTMLを編集し、 .buttons と .gallery のリストの要素を3つに増やしてください。</li>
 	<li>hover で透明度を変える処理は、JavaScriptを変更せずとも動作OKでしょうか？<br />
 	(hover 内で $(this) を使わず $('.buttons a') としていた場合は、動きません)</li>
 	<li>画像のフェードインは…… 動作が変ですね。3つの画像が同時にフェードインしてきます。</li>
 </ul>
 
 <nav>
-    ＜ Step
-    <a href="step1.html">1</a>
-    <a href="step2.html">2</a>
-    <a href="step3.html">3</a>
-    <a href="step4.html">4</a>
-    <a href="step5.html">5</a>
-    <a href="step6.html">6</a>
-    <a href="step7.html">7</a>
-    ＞
+	＜ Step
+	<a href="step1.html">1</a>
+	<a href="step2.html">2</a>
+	<a href="step3.html">3</a>
+	<a href="step4.html">4</a>
+	<a href="step5.html">5</a>
+	<a href="step6.html">6</a>
+	<a href="step7.html">7</a>
+	＞
 </nav>
 
 <!--
@@ -42,10 +42,10 @@ $(function() {
 			return false; // preventDefault() を使う方がベター
 		})
 		.hover(function() {
-		    // マウスが乗った時の処理
+			// マウスが乗った時の処理
 			$(this).stop().fadeTo(200, 0.5);
 		}, function() {
-		    // マウスが外れた時の処理
+			// マウスが外れた時の処理
 			$(this).stop().fadeTo(200, 1);
 		});
 });

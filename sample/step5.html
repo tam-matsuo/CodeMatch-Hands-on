@@ -16,15 +16,15 @@
 </ul>
 
 <nav>
-    ＜ Step
-    <a href="step1.html">1</a>
-    <a href="step2.html">2</a>
-    <a href="step3.html">3</a>
-    <a href="step4.html">4</a>
-    <a href="step5.html">5</a>
-    <a href="step6.html">6</a>
-    <a href="step7.html">7</a>
-    ＞
+	＜ Step
+	<a href="step1.html">1</a>
+	<a href="step2.html">2</a>
+	<a href="step3.html">3</a>
+	<a href="step4.html">4</a>
+	<a href="step5.html">5</a>
+	<a href="step6.html">6</a>
+	<a href="step7.html">7</a>
+	＞
 </nav>
 
 <!--
@@ -33,7 +33,7 @@
 $(function() {
 	$('.buttons a')
 		.click(function() {
-		    // 何番目のボタンが押されたのか？を求める
+			// 何番目のボタンが押されたのか？を求める
 			var i;
 			i = $('.buttons a').index(this);
 
@@ -45,10 +45,10 @@ $(function() {
 			return false;
 		})
 		.hover(function() {
-		    // マウスが乗った時の処理
+			// マウスが乗った時の処理
 			$(this).stop().fadeTo(200, 0.5);
 		}, function() {
-		    // マウスが外れた時の処理
+			// マウスが外れた時の処理
 			$(this).stop().fadeTo(200, 1);
 		});
 });
